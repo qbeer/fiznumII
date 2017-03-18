@@ -125,7 +125,7 @@ void multiply(mtrx* A, mtrx* b){
         for(int j=0;j<b->column;j++){
             result = 0.;
             for(int m=0;m<A->column;m++){
-                result += A->matrix[i*A->column + m] * b->matrix[m*b->row + j];
+                result += A->matrix[i*A->column + m] * b->matrix[j*b->row + m];
             }
             printf("%f ",result);
         }
