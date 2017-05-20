@@ -44,7 +44,7 @@ int main()
         U[i] = (double*)malloc(sizeof(double)*(N-i));
 
     }
-
+    
     for(int i=0;i<N;i++){
 
         L[i][i] = 1.;
@@ -125,28 +125,40 @@ int main()
         printf("\n");
 
     }
-
+    
     printf("\nLU is: \n");
-
+    
     for(int i=0;i<N;i++){
-
+        
         for(int j=0;j<N;j++){
-
+            
             double sol = 0.0;
-
+            
             for(int k=0;k<=i;k++){
-
-                sol += L[i][k]*U[k][j];
-
+                
+                sol += L[i][k]*U[k][j]; 
+                
             }
-
+            
             printf("%lf ", sol);
-
+            
         }
-
+        
         printf("\n");
-
+        
     }
+    
+    printf("\ndet(A) is: ");
+    
+    double temp = 1.;
+    
+    for(int i=0;i<N;i++){
+        
+        temp *= U[i][i];
+        
+    }
+    
+    printf("%lf\n", temp);
 
     return 0;
 }
